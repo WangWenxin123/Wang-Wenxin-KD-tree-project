@@ -1,30 +1,30 @@
 # Wang-Wenxin-KD-tree-project
-from typing import List
-from collections import namedtuple
-import numpy as np
-import matplotlib.pyplot as plt
-import time
+    from typing import List
+    from collections import namedtuple
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import time
 
 
-class Point(namedtuple("Point", "x y")):
+    class Point(namedtuple("Point", "x y")):
     def __repr__(self) -> str:
         return f'Point{tuple(self)!r}'
 
 
-class Rectangle(namedtuple("Rectangle", "lower upper")):
+    class Rectangle(namedtuple("Rectangle", "lower upper")):
     def __repr__(self) -> str:
         return f'Rectangle{tuple(self)!r}'
 
     def is_contains(self, p: Point) -> bool:
         return self.lower.x <= p.x <= self.upper.x and self.lower.y <= p.y <= self.upper.y
 
-def dist(p1, p2):
-    return (p1[0] - p2[0])* (p1[0] - p2[0]) + (p1[1] - p2[1])* (p1[1] - p2[1])
+    def dist(p1, p2):
+        return (p1[0] - p2[0])* (p1[0] - p2[0]) + (p1[1] - p2[1])* (p1[1] - p2[1])
 
     # node for kd tree
     # location is point
     # left: left point, right: right point
-class Node(namedtuple("Node", "location left right")):
+    class Node(namedtuple("Node", "location left right")):
     """
     location: Point
     left: Node
@@ -36,7 +36,7 @@ class Node(namedtuple("Node", "location left right")):
 
 
       # kd tree class
-class KDTree:
+    class KDTree:
     """k-d tree"""
 
     def __init__(self):
@@ -190,16 +190,16 @@ class KDTree:
      # insert points of [(7, 2), (5, 4), (9, 6), (4, 7), (8, 1), (2, 3)]
      # query nearestneighbour of (5, 4)
      # check the nearest_neighbour_search method of kd-tree, the right answer is (5, 4)
-def nearest_neighbour_test():
+    def nearest_neighbour_test():
 
-    points = [Point(7, 2), Point(5, 4), Point(9, 6), Point(4, 7), Point(8, 1), Point(2, 3)]
-    kd = KDTree()
-    kd.insert(points)
-    result = kd.nearest_neighbour_search(Point(5, 5))
-    assert result == Point(5, 4)
+        points = [Point(7, 2), Point(5, 4), Point(9, 6), Point(4, 7), Point(8, 1), Point(2, 3)]
+        kd = KDTree()
+        kd.insert(points)
+        result = kd.nearest_neighbour_search(Point(5, 5))
+        assert result == Point(5, 4)
 
 
-if __name__ == '__main__':
+    if __name__ == '__main__':
       # range_test()
       # performance_test()
     nearest_neighbour_test()
