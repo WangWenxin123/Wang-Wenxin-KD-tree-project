@@ -102,12 +102,12 @@ class KDTree:
         # query the inner point in [(0, 0), (6, 6)]
         # check the query method of kd-tree, the right answer is [(2, 3), (5, 4)]
         
-def range_test():
-    points = [Point(7, 2), Point(5, 4), Point(9, 6), Point(4, 7), Point(8, 1), Point(2, 3)]
-    kd = KDTree()
-    kd.insert(points)
-    result = kd.range(Rectangle(Point(0, 0), Point(6, 6)))
-    assert sorted(result) == sorted([Point(2, 3), Point(5, 4)])
+    def range_test():
+        points = [Point(7, 2), Point(5, 4), Point(9, 6), Point(4, 7), Point(8, 1), Point(2, 3)]
+        kd = KDTree()
+        kd.insert(points)
+        result = kd.range(Rectangle(Point(0, 0), Point(6, 6)))
+        assert sorted(result) == sorted([Point(2, 3), Point(5, 4)])
     
     
     
@@ -118,12 +118,12 @@ def range_test():
     # insert points of (0, 1000) * (0, 1000)
     # query the inner point in [(500, 500), (504, 504)]
     # compare the time of query
-def performance_test():
-    points = [Point(x, y) for x in range(1000) for y in range(1000)]
+    def performance_test():
+        points = [Point(x, y) for x in range(1000) for y in range(1000)]
 
-    lower = Point(500, 500)
-    upper = Point(504, 504)
-    rectangle = Rectangle(lower, upper)
+        lower = Point(500, 500)
+        upper = Point(504, 504)
+        rectangle = Rectangle(lower, upper)
     #  naive method
     start = int(round(time.time() * 1000))
     result1 = [p for p in points if rectangle.is_contains(p)]
