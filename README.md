@@ -30,7 +30,7 @@
     left: Node
     right: Node
     """
-
+     
     def __repr__(self):
         return f'{tuple(self)!r}'
 
