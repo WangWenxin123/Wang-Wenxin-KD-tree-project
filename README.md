@@ -47,7 +47,7 @@ class KDTree:
     
     
   
-    #insert（）
+   # insert（）
     # p is the point linst
     # dim is the cutting dimension
     # dfs to insert insert nodes
@@ -74,7 +74,7 @@ class KDTree:
     
     
     
-    #range()
+   # range()
     # range query
     # bfs to query every node in the KD tree
     def range(self, rectangle: Rectangle) -> List[Point]:
@@ -101,6 +101,7 @@ class KDTree:
         # insert points of [(7, 2), (5, 4), (9, 6), (4, 7), (8, 1), (2, 3)]
         # query the inner point in [(0, 0), (6, 6)]
         # check the query method of kd-tree, the right answer is [(2, 3), (5, 4)]
+        
 def range_test():
     points = [Point(7, 2), Point(5, 4), Point(9, 6), Point(4, 7), Point(8, 1), Point(2, 3)]
     kd = KDTree()
@@ -113,7 +114,7 @@ def range_test():
     
     
 
-#answer for question 4
+# answer for question 4
     # insert points of (0, 1000) * (0, 1000)
     # query the inner point in [(500, 500), (504, 504)]
     # compare the time of query
@@ -156,8 +157,8 @@ def performance_test():
     
 
 
-#code and solution for question 5   
-#find and test nearest neighbour for point in KD treee
+# code and solution for question 5   
+    # find and test nearest neighbour for point in KD treee
     def nearest_neighbour_search(self, point) -> Point:
     
         best_dis = dist(point, self._root.location)
