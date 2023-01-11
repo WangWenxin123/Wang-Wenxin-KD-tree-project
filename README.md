@@ -186,9 +186,9 @@ def performance_test():
 
 
 
-# insert points of [(7, 2), (5, 4), (9, 6), (4, 7), (8, 1), (2, 3)]
-# query nearestneighbour of (5, 4)
-# check the nearest_neighbour_search method of kd-tree, the right answer is (5, 4)
+     # insert points of [(7, 2), (5, 4), (9, 6), (4, 7), (8, 1), (2, 3)]
+     # query nearestneighbour of (5, 4)
+     # check the nearest_neighbour_search method of kd-tree, the right answer is (5, 4)
 def nearest_neighbour_test():
 
     points = [Point(7, 2), Point(5, 4), Point(9, 6), Point(4, 7), Point(8, 1), Point(2, 3)]
